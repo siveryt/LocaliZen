@@ -1,6 +1,3 @@
-import { TranslationCatalog } from './types/XCStrings';
-import { assert } from 'console';
-
 let fileInput = document.getElementById('fileInput');
 
 fileInput?.addEventListener('change', (e) => {
@@ -8,14 +5,18 @@ fileInput?.addEventListener('change', (e) => {
   let file = target.files?.[0];
 
   if (!file) {
+    console.error('No file selected');
     return;
   }
 
   let reader = new FileReader();
 
-  reader.onload = (e) => {
-    let content = e.target?.result as string;
-
-    localStorage.setItem('catalog', content);
+  reader.onload = function (event) {
+    let fileContent = event.target?.result;
+    if (fileContent) {
+      localStorage.setItem('catalog', fileContent as string);
+    }
   };
+
+  reader.readAsText(file);
 });
