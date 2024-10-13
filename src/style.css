@@ -1,16 +1,32 @@
+:root {
+    --background-color: #f4f4f4;
+    --contrast-color: #e7e7e7;
+    --text-color: #333;
+    --border-color: #ccc;
+    --primary-color: #007bff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --contrast-color: #1e1e1e;
+        --text-color: #e0e0e0;
+        --border-color: #444;
+        --primary-color: #bb86fc;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: var(--background-color);
     margin: 0;
+    height: 100vh;
+    color: var(--text-color);
 }
 
 .container {
     text-align: center;
-    background: #fff;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,12 +34,98 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-color);
 }
 
 input[type="file"] {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: var(--contrast-color);
+    z-index: 1000;
+    padding: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+main#upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    input {
+        width: 100%;
+        height: max-content;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+
+    a {
+        color: inherit;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    tr:nth-child(odd) {
+        background: #00000010;
+    }
+
+    tr > * {
+        padding: 10px;
+        border: 1px solid var(--border-color);
+    }
+
+    th {
+        background: var(--background-color);
+        padding: 10px;
+        text-align: left;
+    }
+
+    td:nth-child(5) {
+        text-align: center;
+    }
+}
+
+input {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    font: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.bi-check-circle-fill {
+    color: green;
+}
+
+.bi-exclamation-diamond-fill {
+    color: red;
+}
+
+.bi-x-lg {
+    color: gray;
 }

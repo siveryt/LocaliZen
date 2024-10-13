@@ -1,1 +1,77 @@
-testtestsdf
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - LocaliZen</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LocaliZen - <span id="projectTitle">PROJECT TITLE</span></h1>
+        <i>Changes are always saved to your browser's local storage</i>
+        <div id="controls">
+            <label for="target">
+                Target language:
+                <select id="target">
+                    <option value="de">German</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </label>
+            <button id="save">Save</button>
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Default Localization (<span id="ISO_CODE_DEFAULT">ISO_CODE_DEFAULT</span>)</th>
+                <th><span id="TARGET_LANGUAGE">TARGET_LANGUAGE</span> (<span id="ISO_CODE_TARGET">ISO_CODE_TARGET</span>)</th>
+                <th>Comment</th>
+                <th>State</th>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Example Row</td>
+                <td><input placeholder="lol" type="text"></td>
+                <td>Example Comment</td>
+                <td><i title="Translated" class="bi bi-check-circle-fill"></i></td>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Example Row</td>
+                <td><input placeholder="lol" type="text"></td>
+                <td>Example Comment</td>
+                <td>NEW</td>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Example Row</td>
+                <td><input placeholder="lol" type="text"></td>
+                <td>Example Comment</td>
+                <td><i title="Needs review" class="bi bi-exclamation-diamond-fill"></i></td>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Example Row</td>
+                <td><input placeholder="lol" disabled type="text"></td>
+                <td>Example Comment</td>
+                <td><i title="Don't translate" class="bi bi-x-lg"></i></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>LocaliZen - Made with ❤️ by <a href="https://sivery.de">Sivery</a></p>
+    </footer>
+
+
+</body>
+
+</html>
