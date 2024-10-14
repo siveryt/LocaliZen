@@ -1,4 +1,4 @@
-import LanguageCode from 'iso-639-1';
+import { LanguageCode } from './LanguageList';
 
 // Define a type for translation states
 type TranslationState = 'translated' | 'new' | 'needs_review';

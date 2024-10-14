@@ -9,6 +9,8 @@ fileInput?.addEventListener('change', (e) => {
     return;
   }
 
+  localStorage.setItem('filename', file.name.split('.xcstrings')[0]);
+
   let reader = new FileReader();
 
   reader.onload = function (event) {

@@ -57,6 +57,9 @@ header {
 
 main {
     padding: 20px;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 main#upload {
@@ -116,6 +119,7 @@ input {
     font: inherit;
     width: 100%;
     height: 100%;
+    color: inherit;
 }
 
 .bi-check-circle-fill {
