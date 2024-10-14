@@ -65,7 +65,7 @@ function updateTable() {
           string.localizations[targetLanguage].stringUnit.value;
       }
 
-      let stateTag = 'N/A';
+      let stateTag = '';
       if (!(string.shouldTranslate ?? true)) {
         stateTag = `<i title="Don't translate" class="bi bi-x-lg"></i>`;
       } else if (
