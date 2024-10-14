@@ -41,6 +41,9 @@ window.onload = () => {
 };
 
 function updateTable() {
+  $id('TARGET_LANGUAGE')!.innerHTML = LANGUAGES_LIST[targetLanguage].name;
+  $id('ISO_CODE_TARGET')!.innerText = targetLanguage;
+
   Object.keys(catalog.strings).forEach((key) => {
     const string = catalog.strings[key];
 
