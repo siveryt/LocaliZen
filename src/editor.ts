@@ -31,6 +31,7 @@ window.onload = () => {
     targetLanguage = ($id('target') as HTMLSelectElement)!
       .value as LanguageCode;
     localStorage.setItem('targetLanguage', targetLanguage);
+    updateTable();
     // Update translation
   };
 
@@ -43,6 +44,11 @@ window.onload = () => {
 function updateTable() {
   $id('TARGET_LANGUAGE')!.innerHTML = LANGUAGES_LIST[targetLanguage].name;
   $id('ISO_CODE_TARGET')!.innerText = targetLanguage;
+
+  // Clear table except first row
+  let firstRow = $query('#strings > tbody > tr');
+  $query('#strings > tbody')!.innerHTML = '';
+  $query('#strings > tbody')!.appendChild(firstRow!);
 
   Object.keys(catalog.strings).forEach((key) => {
     const string = catalog.strings[key];
